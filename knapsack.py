@@ -3,11 +3,13 @@
 import sys
 from collections import namedtuple
 
-Item = namedtuple('Item', ['index', 'size', 'value'])
+Item = namedtuple('Item', ['index', 'size', 'value', 'juice'])
 
 def knapsack_solver(items, capacity):
   # !!!! IMPLEMENT ME
-  pass
+  for i in range(len(items)):
+    #print(items[i])
+    pass
 
 if __name__ == '__main__':
   if len(sys.argv) > 1:
@@ -18,9 +20,14 @@ if __name__ == '__main__':
 
     for line in file_contents.readlines():
       data = line.rstrip().split()
-      items.append(Item(int(data[0]), int(data[1]), int(data[2])))
+      items.append(Item(int(data[0]), int(data[1]), int(data[2]), float(data[2])/float(data[1])))
     
     file_contents.close()
+
+    ice_items = sorted(items, key=lambda item: item[3], reverse=True )
+    for i in range(len(ice_items)):
+      print(ice_items[i])
+      
     print(knapsack_solver(items, capacity))
   else:
     print('Usage: knapsack.py [filename] [capacity]')
