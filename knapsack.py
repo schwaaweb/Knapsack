@@ -48,3 +48,27 @@ if __name__ == '__main__':
     print(knapsack_solver(ice_items, capacity))
   else:
     print('Usage: knapsack.py [filename] [capacity]')
+
+
+'''
+PASS::
+schwaaweb:Knapsack 02:58:09$ python knapsack.py data/medium2.txt 100
+[155, 66, 10, 174, 188, 139, 28, 153, 145, 191, 120, 1, 64] 100 969
+None
+ 
+FAIL::
+python knapsack.py data/medium1.txt 100
+[104, 107, 134, 83, 44, 160, 60, 157, 77, 80, 94, 49, 117, 170] 91 1009
+None
+
+python knapsack.py data/medium3.txt 100
+[170, 198, 15, 68, 133, 120, 158, 9, 47, 161, 116, 14, 164, 181, 154] 94 84
+7                                                                         
+None
+
+python knapsack.py data/large1.txt 100
+[104, 671, 737, 370, 432, 239, 107, 297, 561, 935, 796, 134, 693, 83, 949, 
+704, 271, 782, 814, 566, 866, 420, 295, 795, 997, 44, 648, 623, 844, 160, 3
+37, 907, 329, 909, 308, 335, 373, 913] 99 2628                            
+None
+'''
